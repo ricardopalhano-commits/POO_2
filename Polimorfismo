@@ -1,0 +1,13 @@
+class Animal:
+    def emitirSom(self):
+        raise NotImplementedError("As subclasses devem implementar emitirSom().")
+
+
+class Cachorro(Animal):
+    def emitirSom(self):
+        print("Au au!")
+
+
+class Gato(Animal):
+    def emitirSom(self):
+        print("Miau!")
