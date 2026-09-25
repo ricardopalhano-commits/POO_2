@@ -1,0 +1,11 @@
+class Pessoa:
+    def __init__(self, nome):
+        self.nome = nome
+
+
+class Aluno(Pessoa):
+    pass
+
+
+class Professor(Pessoa):
+    pass
