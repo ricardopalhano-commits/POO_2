@@ -1,0 +1,36 @@
+from abc import ABC, abstractmethod
+
+
+class Pessoa(ABC):
+    def __init__(self, nome):
+        self.__nome = nome
+
+    def getNome(self):
+        return self.__nome
+
+    def setNome(self, nome):
+        self.__nome = nome
+
+    @abstractmethod
+    def apresentar(self):
+        pass
+
+
+class Aluno(Pessoa):
+    def __init__(self, nome, curso):
+        super().__init__(nome)
+        self.curso = curso
+
+    def apresentar(self):
+        return "Sou {} e estudo {}.".format(self.getNome(), self.curso)
+
+
+class Professor(Pessoa):
+    def __init__(self, nome, disciplina):
+        super().__init__(nome)
+        self.disciplina = disciplina
+
+    def apresentar(self):
+        return "Sou o professor {} e leciono {}.".format(
+            self.getNome(), self.disciplina
+        )
