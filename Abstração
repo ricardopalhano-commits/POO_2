@@ -1,0 +1,25 @@
+from abc import ABC, abstractmethod
+import math
+
+
+class Forma(ABC):
+    @abstractmethod
+    def calcularArea(self):
+        pass
+
+
+class Retangulo(Forma):
+    def __init__(self, largura, altura):
+        self.largura = largura
+        self.altura = altura
+
+    def calcularArea(self):
+        return self.largura * self.altura
+
+
+class Circulo(Forma):
+    def __init__(self, raio):
+        self.raio = raio
+
+    def calcularArea(self):
+        return math.pi * self.raio ** 2
